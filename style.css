@@ -1,0 +1,55 @@
+body{
+  background-color: rgb(25, 25, 25);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+ /* // border: 2px solid red; */
+  width: 400px;
+  padding:  40px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px rgba(224, 185, 10, 0.7);
+  
+}
+.game-name{
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.reset-btn{
+  border: none;
+  font-size: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.move-icon{
+  height: 50px;
+}
+.move-btn{
+  background-color: transparent;
+  border: 3px solid white;
+  /* padding: 30px 32px;  you can not use padding here because the height of images are different so use height and width properties*/
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.result{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.score{
+  margin-top: 60px;
+}
