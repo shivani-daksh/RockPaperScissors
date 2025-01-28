@@ -24,11 +24,12 @@ body{
   margin-top: 0px;
   margin-bottom: 50px;
 }
-.reset-btn{
+.reset-btn, .auto-btn{
   border: none;
   font-size: 15px;
   padding: 8px 12px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .move-icon{
   height: 50px;

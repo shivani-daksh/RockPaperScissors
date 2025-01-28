@@ -31,15 +31,21 @@
       <button
         class="reset-btn"
         onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();
-    "
-      >
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        ">
         Reset Score
       </button>
+
+
+      <button class="auto-btn" onclick="
+      autoPlay();
+      ">Auto Play
+      </button>
+
     </div>
 
     <p class="love">Made with 🫶 by Shivani Daksh</p>
