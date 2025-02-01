@@ -30,6 +30,7 @@ body{
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;
+  outline: none;
 }
 .move-icon{
   height: 50px;

@@ -10,15 +10,15 @@
     <div class="container">
       <p class="game-name">Rock Paper Scissors</p>
 
-      <button class="js-btn move-btn" onclick="playGame('Rock'); ">
+      <button class="js-btn move-btn js-rock-button" >
         <img class="move-icon" src="images/Rock.png" alt="rock-emoji" />
       </button>
 
-      <button class="js-btn move-btn" onclick="playGame('Paper'); ">
+      <button class="js-btn move-btn js-paper-button" >
         <img class="move-icon" src="images/Paper.png" alt="paper-emoji" />
       </button>
 
-      <button class="js-btn move-btn" onclick="playGame('Scissors'); ">
+      <button class="js-btn move-btn js-scissor-button" >
         <img class="move-icon" src="images/Scissors.png" alt="scissors-emoji" />
       </button>
 
@@ -29,21 +29,12 @@
       <p class="js-score score"></p>
 
       <button
-        class="reset-btn"
-        onclick="
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        localStorage.removeItem('score');
-        updateScoreElement();
-        ">
+        class="reset-btn js-reset-btn">
         Reset Score
       </button>
 
 
-      <button class="auto-btn" onclick="
-      autoPlay();
-      ">Auto Play
+      <button class="auto-btn js-auto-btn"> Auto Play
       </button>
 
     </div>

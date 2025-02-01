@@ -1,3 +1,4 @@
+
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
@@ -26,7 +27,45 @@ function autoPlay() {
   }
 }
 
+document.querySelector('.js-rock-button')
+.addEventListener('click', () =>{
+  playGame('Rock');
+});
 
+document.querySelector('.js-paper-button')
+.addEventListener('click', () =>{
+  playGame('Paper');
+});
+
+document.querySelector('.js-scissor-button')
+.addEventListener('click', () =>{
+  playGame('Scissors');
+});
+
+document.body.addEventListener('keydown', (event) => {
+if(event.key ==='r'){
+  playGame('Rock');
+}
+else if(event.key ==='p'){
+  playGame('Paper');
+}
+else if(event.key ==='s'){
+  playGame('Scissors');
+}
+});
+
+document.querySelector('.js-reset-btn').addEventListener('click', () => {
+  score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+});
+
+
+document.querySelector('.js-auto-btn').addEventListener('click', () => {
+  autoPlay();
+});
 
 
 function playGame(playerMove) {
