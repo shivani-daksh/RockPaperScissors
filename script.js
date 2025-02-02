@@ -56,21 +56,68 @@ else if(event.key ==='p'){
 else if(event.key ==='s'){
   playGame('Scissors');
 }
+else if(event.key === 'a'){
+  autoPlay();
+}
+else if(event.key  === 'Backspace'){
+  showResetConfirmation();
+}
 });
 
 document.querySelector('.js-reset-btn').addEventListener('click', () => {
-  score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        localStorage.removeItem('score');
-        updateScoreElement();
+  showResetConfirmation();
 });
 
 
 document.querySelector('.js-auto-btn').addEventListener('click', () => {
-  autoPlay();
+    autoPlay();
 });
 
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
+///.................
+
+function showResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = `
+      Are you sure you want to reset the score?
+      <button class="js-reset-confirm-yes reset-confirm-button">
+        Yes
+      </button>
+      <button class="js-reset-confirm-no reset-confirm-button">
+        No
+      </button>
+    `;
+  
+  // You could use onclick="..." in the HTML above,
+  // but it's recommended to use .addEventListener()
+  document.querySelector('.js-reset-confirm-yes')
+    .addEventListener('click', () => {
+      resetScore();
+      hideResetConfirmation();
+    });
+  
+  document.querySelector('.js-reset-confirm-no')
+    .addEventListener('click', () => {
+      hideResetConfirmation();
+    });
+}
+
+// A helper function (it helps us reuse the
+// code for hiding the confirmation message).
+function hideResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+    .innerHTML = '';
+}
+
+//...................
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
