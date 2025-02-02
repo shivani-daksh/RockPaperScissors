@@ -13,17 +13,21 @@ let intervalId;
 function autoPlay() {
  const autoButtonText = document.querySelector('.auto-btn');
   if(!isAutoPlaying){
-    autoButtonText.innerHTML = 'Stop Play';
     intervalId = setInterval(() => {
       const playerMove = pickComputerMove(); // bcz here the player is computer against itself.
       playGame(playerMove);
      }, 1000);
      isAutoPlaying = true;
+
+     autoButtonText.innerHTML = 'Stop Play';
+
   }
   else{
-    autoButtonText.innerHTML = 'Auto Play';
     clearInterval(intervalId);
     isAutoPlaying = false;
+
+    autoButtonText.innerHTML = 'Auto Play';
+
   }
 }
 
